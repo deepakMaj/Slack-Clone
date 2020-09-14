@@ -1,13 +1,145 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+div, ul, li, span, h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+}
+
+.slack, .user-profile{
+  display: flex;
+}
+
+.signin-form{
+  border: solid;
+  border-width: thin;
+  border-color: #eaeaea;
+  padding: 15px 5px;
+  text-align: center;
+}
+
+.sidebar{
+  background: linear-gradient(rgb(95, 9, 95), rgb(70, 7, 70));
+  width: 20%;
+  height: 100vh;
+  padding: 20px 20px;
+}
+
+.user-slack{
+  vertical-align: bottom;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.user-name{
+  margin-top: -18px;
+  font-size: 16px;
+  color:#909497da;
+  font-weight: 600;
+}
+
+#name{
+  margin-top: 15px;
+  margin-left: 10px;
+  display: grid;
+}
+
+.user-channels, .user-messages{
+  padding-top: 30px;
+  padding-left: 15px;
+}
+
+.channels-pri{
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1.4px;
+  font-weight: 600;
+  color: #94989bda;
+  padding-bottom: 8px;
+}
+
+.channels-sec{
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #94989bda;
+}
+
+.channels-name{
+  padding: 6px 8px;
+  margin-left: 4px;
+}
+
+.shift{
+  margin-right: 8px;
+}
+
+.channels-name:hover{
+  background-color: #eaeaea31;
+  border-radius: 4px;
+  color: white;
+}
+
+.header{
+  padding: 25px 25px;
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.5px;
+}
+
+.chat-name{
+  color: rgb(36, 28, 28);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.info{
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(186 185 188);
+}
+
+.break{
+  border-top: 1px solid #eaeaea;
+}
+
+.name{
+  font-size: 19px;
+  margin-top: 10px;
+  font-weight: 600;
+  color: rgb(36, 28, 28);
+}
+
+.msg{
+  font-size: 16px;
+  margin-top: -10px;
+  font-weight: 600;
+  color: rgb(116, 110, 110);
+}
+
+.only-name:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.input-box{
+  padding: 15px 15px;
+  font-size: 20px;
+  border-radius: 4px;
+  width: 100vh;
+  background: rgb(220 218 218 / 44%);
+  border-color: transparent;
+}
+
+.input-box:focus{
+  outline: none;
 }
