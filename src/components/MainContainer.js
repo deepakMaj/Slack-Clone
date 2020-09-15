@@ -1,11 +1,15 @@
 import React from 'react'
 
 function MainContainer() {
+
   return (
     <div className="main-container" style={{ width: "100%" }}>
+      <div className="menu">
+        <i className="fa fa-bars" ></i>
+      </div>
       <div className="header">
         <div style={{ display: "grid" }}>
-          <span class="chat-name"><i className="fa fa-hashtag"></i> facelift</span>
+          <span className="chat-name"><i className="fa fa-hashtag"></i> facelift</span>
           <span className="info">
             <span style={{ marginRight: "15px" }}>Slack facelift project</span>
             <span><i className="fa fa-circle" style={{ fontSize: "7px", verticalAlign: "middle" }}></i> 10 members</span>
@@ -17,7 +21,7 @@ function MainContainer() {
         </div>
       </div>
       <div className="break"></div>
-      <div className="chat-box" style={{ padding: "25px 25px", position: "relative", height: "65%" }}>
+      <div className="chat-box">
         <div className="users" style={{ display: "flex" }}>
           <div>
             <img src="https://img.icons8.com/bubbles/60/000000/user-male.png" alt="" id="user-img" />
@@ -31,9 +35,9 @@ function MainContainer() {
           </div>
         </div>
       </div>
-      <div className="input-div" style={{ position: "absolute", padding: "25px 25px" }}>
-        <input type="text" className="input-box" placeholder="Message someone" />
-        <i className="fa fa-paper-plane" style={{ fontSize: "30px", marginLeft: "10px" }}></i>
+      <div className="input-div" style={{ padding: "25px", paddingBottom: "5px", display: "flex" }}>
+        <input type="text" className="input-box" placeholder="Message someone..." />
+        <i className="fa fa-paper-plane send-btn"></i>
       </div>
     </div>
   )
