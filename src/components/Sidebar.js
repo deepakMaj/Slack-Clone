@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { signOut } from '../firebase';
 
 function Sidebar() {
   return (
@@ -14,6 +15,7 @@ function Sidebar() {
             Deepak Mahajan
           </span>
         </div>
+        <img src="https://img.icons8.com/fluent/48/000000/exit.png" alt="" style={{ height: "50px", marginLeft: "10px", marginTop: "10px" }} onClick={signOut} />
       </div>
       <div className="user-channels">
         <div className="channels-pri">

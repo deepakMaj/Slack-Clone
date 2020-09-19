@@ -210,3 +210,12 @@ div, ul, li, span, h1, h2, h3, h4, h5, h6{
   margin-left: -4rem;
   cursor: pointer;
 }
+
+.loading{
+  height: 100px;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
