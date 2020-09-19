@@ -3,7 +3,7 @@ import React from 'react'
 function MainContainer() {
 
   return (
-    <div className="main-container" style={{ width: "100%" }}>
+    <div className="main-container" style={{ width: "100%", height: "100vh" }}>
       <div className="menu">
         <i className="fa fa-bars" ></i>
       </div>

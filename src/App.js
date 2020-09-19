@@ -11,7 +11,7 @@ function App() {
 
   if (userContext.loading) {
     return (
-      <img src={require('./components/static/loading.gif')} alt="" />
+      <img src={require('./components/static/loading.gif')} alt="" className="loading" />
     )
   }
 

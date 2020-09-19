@@ -14,6 +14,13 @@
   .header{
     padding-top: 5px;
   }
+
+  .signin-form{
+    left: 0 !important;
+    top: 40% !important;
+    transform: translate(0) !important;
+    margin-left: 10%;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1023px){
@@ -72,11 +79,31 @@ div, ul, li, span, h1, h2, h3, h4, h5, h6{
 }
 
 .signin-form{
-  border: solid;
-  border-width: thin;
-  border-color: #eaeaea;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   padding: 15px 5px;
   text-align: center;
+}
+
+.google-btn{
+  padding: 4px 40px;
+  border-radius: 4rem;
+  border: none;
+  background: #ffffff7d;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: transform;
+}
+
+.google-btn:hover{
+  transform: scale(1.025);
+  cursor: pointer;
+}
+
+button:focus{
+  outline: none;
 }
 
 .sidebar{
@@ -218,4 +245,11 @@ div, ul, li, span, h1, h2, h3, h4, h5, h6{
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
+}
+
+.background{
+  position: absolute;
+  height: 100%;
+  z-index: -1;
+  width: -webkit-fill-available;
 }

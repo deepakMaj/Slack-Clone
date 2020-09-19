@@ -5,7 +5,7 @@ export default (state, action) => {
     case SET_USER:
       return {
         ...state,
-        user: { uid: action.payload.id, ...action.payload },
+        user: { uid: action.payload ? action.payload.id : null, ...action.payload },
         loading: false
       }
     case CLEAR_USER:

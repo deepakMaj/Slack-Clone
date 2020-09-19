@@ -18,9 +18,11 @@ const UserState = props => {
           dispatch({ type: SET_USER, payload: snapshot });
         });
       }
-      dispatch({ type: SET_USER, payload: userAuth });
+      else {
+        dispatch({ type: CLEAR_USER });
+      }
     });
-  });
+  }, []);
 
   const clearUser = () => {
     dispatch({ type: CLEAR_USER });
