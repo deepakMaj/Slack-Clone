@@ -5,7 +5,7 @@ import UserContext from '../context/user/userContext';
 
 function SignIn() {
   const userContext = useContext(UserContext);
-  if (userContext.user) {
+  if (userContext.user != null) {
     return <Redirect to="/" />
   }
   return (

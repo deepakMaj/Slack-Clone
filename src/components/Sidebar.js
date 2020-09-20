@@ -1,17 +1,14 @@
 import React, { useContext } from 'react';
 import { signOut } from '../firebase';
-import { Redirect } from 'react-router-dom';
 import UserContext from '../context/user/userContext';
 
 function Sidebar() {
-
   const userContext = useContext(UserContext);
   const { clearUser } = userContext;
 
   const onSignOut = () => {
     signOut();
     clearUser();
-    return <Redirect to='/login' />
   }
 
   return (
