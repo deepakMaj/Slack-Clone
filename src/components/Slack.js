@@ -34,7 +34,7 @@ const Slack = props => {
       }
       else {
         const filterChannel = channels.filter(channel => channel.id === channelId);
-        setCurrentChannel(filterChannel);
+        setCurrentChannel(filterChannel[0]);
       }
     })
       .catch(err => {

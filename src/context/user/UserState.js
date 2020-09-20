@@ -1,12 +1,12 @@
 import React, { useEffect, useReducer } from 'react'
-import { SET_USER, CLEAR_USER } from '../types';
+import { SET_USER, CLEAR_USER, OPEN_SIDEBAR } from '../types';
 import UserContext from './userContext';
 import UserReducer from './userReducer';
 import { auth, createOrGetUserProfileDocument } from '../../firebase';
 
 const UserState = props => {
 
-  const initialState = { user: null, loading: true };
+  const initialState = { user: null, loading: true, sidebar: false };
   const [state, dispatch] = useReducer(UserReducer, initialState);
 
   useEffect(() => {
@@ -28,13 +28,17 @@ const UserState = props => {
     dispatch({ type: CLEAR_USER });
   }
 
-  const { user, loading } = state;
+  const openSidebar = () => dispatch({ type: OPEN_SIDEBAR })
+
+  const { user, loading, sidebar } = state;
 
   return (
     <UserContext.Provider value={{
       user,
       loading,
-      clearUser
+      sidebar,
+      clearUser,
+      openSidebar
     }}>
       {props.children}
     </UserContext.Provider>

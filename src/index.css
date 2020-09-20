@@ -122,14 +122,12 @@ button:focus{
 }
 
 .user-name{
-  margin-top: -18px;
   font-size: 16px;
   color:#909497da;
   font-weight: 600;
 }
 
 #name{
-  margin-top: 15px;
   margin-left: 10px;
   display: grid;
 }
@@ -155,19 +153,29 @@ button:focus{
   color: #94989bda;
 }
 
-.channels-name{
+.channels-name, .channelName{
   padding: 6px 8px;
   margin-left: 4px;
+  text-decoration: none;
+  color: #94989bda;
 }
 
 .shift{
   margin-right: 8px;
 }
 
+.channelName:hover{
+  color: white;
+}
+
+.channels-name:hover .channelName{
+  color: white;
+}
+
 .channels-name:hover{
   background-color: #eaeaea31;
   border-radius: 4px;
-  color: white;
+  color: white !important;
 }
 
 .chat-box{
@@ -252,4 +260,9 @@ button:focus{
   height: 100%;
   z-index: -1;
   width: -webkit-fill-available;
+}
+
+#user-img{
+  height: 55px;
+  border-radius: 50%;
 }

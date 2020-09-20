@@ -1,4 +1,4 @@
-import { SET_USER, CLEAR_USER } from '../types';
+import { SET_USER, CLEAR_USER, OPEN_SIDEBAR } from '../types';
 
 export default (state, action) => {
   switch (action.type) {
@@ -13,6 +13,11 @@ export default (state, action) => {
         ...state,
         user: null,
         loading: false
+      }
+    case OPEN_SIDEBAR:
+      return {
+        ...state,
+        sidebar: true
       }
     default:
       return state;
