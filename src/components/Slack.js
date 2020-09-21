@@ -12,6 +12,7 @@ const Slack = props => {
   const { history } = props;
   const [channels, setChannels] = useState([]);
   const [currentChannel, setCurrentChannel] = useState({});
+  const [toggle, setToggle] = useState(false);
   const query = useQuery();
   const channelId = query.get('id');
 
@@ -41,10 +42,23 @@ const Slack = props => {
         console.log(err);
       });
   }, [channelId, history]);
+
+
+  let sidebar = <Sidebar channels={channels} toggle={toggle} />;
+  const onClickToggle = () => {
+    if (!toggle) {
+      setToggle(true);
+    }
+    else {
+      setToggle(false);
+    }
+  }
+  sidebar = <Sidebar channels={channels} toggle={toggle} onClickToggle={onClickToggle} />
+
   return (
     <div className="slack">
-      <Sidebar channels={channels} />
-      <MainContainer channel={currentChannel} />
+      {sidebar}
+      <MainContainer channel={currentChannel} onClickToggle={onClickToggle} />
     </div>
   )
 }

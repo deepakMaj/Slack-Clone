@@ -1,11 +1,10 @@
 import { firestore, auth } from '../firebase';
-import React, { useEffect, useState, useContext } from 'react';
-import UserContext from '../context/user/userContext';
+import React, { useEffect, useState } from 'react';
+// import UserContext from '../context/user/userContext';
 
 const MainContainer = props => {
-  const userContext = useContext(UserContext);
-  const { openSidebar } = userContext;
-  const { channel } = props;
+  // const userContext = useContext(UserContext);
+  const { channel, onClickToggle } = props;
   const [messages, setMessages] = useState([]);
   const [userMessage, setUserMessage] = useState('');
 
@@ -46,16 +45,15 @@ const MainContainer = props => {
     setUserMessage(e.target.value);
   }
 
-
   useEffect(() => {
     fetchMessages();
     // eslint-disable-next-line
   }, [channel]);
 
   return (
-    <div className="main-container" style={{ width: "100%", height: "100vh" }}>
+    <div className="main-container" style={{ width: "100%", height: "100vh", marginLeft: "28%" }}>
       <div className="menu">
-        <i className="fa fa-bars" onClick={openSidebar}></i>
+        <i className="fa fa-bars" onClick={onClickToggle}></i>
       </div>
       <div className="header">
         <div style={{ display: "grid" }}>

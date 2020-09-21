@@ -1,30 +1,20 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { signOut } from '../firebase';
 import UserContext from '../context/user/userContext';
 import { Link } from 'react-router-dom';
 
 const Sidebar = props => {
   const userContext = useContext(UserContext);
-  const { clearUser, user, sidebar } = userContext;
-  const { channels } = props;
+  const { clearUser, user } = userContext;
+  const { channels, toggle, onClickToggle } = props;
 
   const onSignOut = () => {
     signOut();
     clearUser();
   }
 
-  useEffect(() => {
-    if (sidebar) {
-      document.querySelector('.sidebar').display = 'block !important';
-      console.log('working');
-    }
-    else {
-      console.log('not working');
-    }
-  });
-
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={{ display: toggle ? 'block' : 'none' }}>
       <div className="user-profile">
         <div>
           <img src={user.photo_url} alt="" id="user-img" />
@@ -37,6 +27,7 @@ const Sidebar = props => {
           </span>
         </div>
         <img src="https://img.icons8.com/fluent/48/000000/exit.png" alt="" style={{ height: "50px", marginLeft: "2px", marginTop: "15px", cursor: "pointer" }} onClick={onSignOut} title="Sign Out" />
+        <i className="fa fa-times" id="close" onClick={onClickToggle}></i>
       </div>
       <div className="user-channels">
         <div className="channels-pri">
@@ -62,7 +53,7 @@ const Sidebar = props => {
             <li className="channels-name">
               <span className="shift">
                 <img src="https://img.icons8.com/fluent/8/000000/circled.png" alt="" style={{ marginRight: "8px" }} />
-                Deepak Mahajan(You)
+                {user.display_name}(You)
               </span>
             </li>
             <li className="channels-name">
@@ -77,23 +68,12 @@ const Sidebar = props => {
                 Hemant Gupta
               </span>
             </li>
-            <li className="channels-name">
-              <span className="shift">
-                <img src="https://img.icons8.com/fluent/8/000000/circled.png" alt="" style={{ marginRight: "8px" }} />
-                Jatinder Singh
-              </span>
-            </li>
-            <li className="channels-name">
-              <span className="shift">
-                <img src="https://img.icons8.com/fluent/8/000000/circled.png" alt="" style={{ marginRight: "8px" }} />
-                Rahul Madaan
-              </span>
-            </li>
           </ul>
         </div>
       </div>
     </div>
   )
+
 }
 
 export default Sidebar
