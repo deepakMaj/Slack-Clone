@@ -23,6 +23,7 @@
     padding: 0 25px;
     padding-top: 5px;
     font-size: 25px;
+    display: block !important;
   }
 
   .header{
@@ -113,6 +114,11 @@ div, ul, li, span, h1, h2, h3, h4, h5, h6{
   transform: translate(-50%, -50%);
   padding: 15px 5px;
   text-align: center;
+  display: block;
+}
+
+.menu{
+  display: none;
 }
 
 .google-btn{
